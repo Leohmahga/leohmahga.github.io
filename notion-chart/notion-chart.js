@@ -130,10 +130,11 @@ let nuttChartOptions = {
 	},
 	'height': window.innerHeight - 5,
 	'legend': {
-		'position': 'bottom',
-		'textStyle': {
-			'color': nuttFontColor,
-			'fontSize': nuttFontSize,
+		display: false
+		// 'position': 'bottom',
+		// 'textStyle': {
+		// 	'color': nuttFontColor,
+		// 	'fontSize': nuttFontSize,
 		}
 	},
 	'pieHole': 0.5,
