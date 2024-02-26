@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="notion-chart.css">
     <style>
     #api-results {
+        height: 100vh;
+        weight: 100vw;
         text-align: center;
         /* Center the text within the div */
-        font-size: calc(10vw + 12px);
+        font-size: calc(10vmin + 12px);
         /* Set the font size to 72 pixels for a larger display */
         font-weight: bold;
         /* Make the number bolder */
@@ -24,7 +26,15 @@
 <body>
     <div id="api-results"></div>
     <script>
-    const apiUrl = "https://sheets.googleapis.com/v4/spreadsheets/1qcXqxT6NwFKmaKsJraeJsqy2P4fv1Vhb8Yqt02jhmwE/values/'Stat KPIs'!a1?key=AIzaSyCtTb9pb5NHBxMtPxxADqNW3aJsYzt0eps"; // Replace with your API endpoint
+    const urlParams = new URLSearchParams(window.location.search);
+    const sheetId = urlParams.get("sheetId");
+    const tabName = urlParams.get("tabName");
+    const cell = urlParams.get("cell");
+    const statName = urlParams.get("statName");
+    const apiKey = urlParams.get("apiKey");
+    
+    const apiUrl = "https://sheets.googleapis.com/v4/spreadsheets/" + sheetId +"/values/'" + tabName + "'!" + cell + "?key=" + apiKey; 
+    //AIzaSyCtTb9pb5NHBxMtPxxADqNW3aJsYzt0eps
 
     fetch(apiUrl)
         .then(response => response.json()) // Assuming the response is always JSON
