@@ -95,12 +95,12 @@ function nuttQueryChartData() {
 let nuttFontColor = '#9F9E9C';
 let nuttFontSize = 12;
 let nuttBaselineColor = '#F2F2F2';
-let nuttBackgroundAndGridlineColor = '00#FFFFFF';
+let nuttBackgroundAndGridlineColor = '#FFFFFF';
 let nuttTooltipColor = '#37352f';
 
 // Dark Mode
 if( nuttChartConfig.theme == 'darkMode' ) {
-	nuttBackgroundAndGridlineColor = '#00FFFFFF';
+	nuttBackgroundAndGridlineColor = '#191919';
 	nuttBaselineColor = '#555';
 	window.addEventListener('load', () => { document.body.style.background = nuttBackgroundAndGridlineColor; });
 }
