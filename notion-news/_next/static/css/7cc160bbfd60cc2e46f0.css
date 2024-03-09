@@ -1,0 +1,101 @@
+.RefreshButton_container__SycaW {
+    text-align: right
+}
+
+.RefreshButton_refreshButton__2F2eY {
+    -webkit-transition: border .2s ease,-webkit-transform .2s ease;
+    transition: border .2s ease,-webkit-transform .2s ease;
+    transition: border .2s ease,transform .2s ease;
+    transition: border .2s ease,transform .2s ease,-webkit-transform .2s ease;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    margin-bottom: 20px;
+    border: 3px solid transparent;
+    background: var(--color-accent);
+    color: var(--color-text-reverse);
+    padding: 5px 15px;
+    border-radius: 5px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    text-shadow: 0 1px 3px rgba(0,0,0,.5)
+}
+
+.RefreshButton_refreshButton__2F2eY:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    border-color: rgba(0,0,0,.5)
+}
+
+.FeedError_feedError__2g6eb {
+    padding: 20px 10px;
+    border: 2px solid var(--color-error);
+    border-radius: 5px;
+    color: var(--color-error);
+    font-style: italic
+}
+
+.FeedError_feedError__2g6eb span {
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: underline dotted
+}
+
+.FeedItem_feedItem__37JEo time {
+    font-size: 12px
+}
+
+.FeedItem_feedItem__37JEo a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0
+}
+
+.FeedItem_feedItem__37JEo:hover {
+    background: var(--color-border);
+    border-color: var(--color-text)
+}
+
+.FeedItem_feedItem__37JEo {
+    position: relative;
+    border: 2px solid var(--color-border);
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-transition: all .1s ease;
+    transition: all .1s ease
+}
+
+.FeedItems_feedItems__vZ4_T {
+    display: grid;
+    grid-gap: 20px
+}
+
+.EmptyFeed_emptyFeed__1KQoJ {
+    color: var(--color-text);
+    opacity: .75;
+    font-size: 12px
+}
+
+.Feed_feed__2AZsj+.Feed_feed__2AZsj {
+    margin-top: 20px
+}
+
+.Feed_feed__2AZsj h2 {
+    font-weight: 700;
+    padding-bottom: 10px
+}
+
+.FeedsWidget_feedsWidget__2E6dM {
+    background: #0000;
+    color: #fff;
+    padding: 10px
+}
+
+.FeedsWidget_feedsWidget__2E6dM ul {
+    display: grid;
+    grid-gap: 20px;
+    width: 100%;
+    line-height: 1.5
+}
