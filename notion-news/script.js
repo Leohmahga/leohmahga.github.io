@@ -6,17 +6,12 @@ if (!RSS_URL) {
 }
 
 fetch(RSS_URL)
-
-
     .then(response => response.text())
     .then(str => new DOMParser().parseFromString(str, "text/xml"))
     .then(data => {
         const items = data.querySelectorAll("item");
         let html = `
         <main class="FeedsWidget_feedsWidget__2E6dM default light">
-            <div class="RefreshButton_container__SycaW">
-                <button class="RefreshButton_refreshButton__2F2eY">👉 Refresh content 👈</button>
-            </div>
             <ul>
                 <li class="Feed_feed__2AZsj">
                     <h2>US Top News and Analysis</h2>
