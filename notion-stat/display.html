@@ -18,7 +18,6 @@
     const apiKey = urlParams.get("apiKey");
 
     const apiUrl = "https://sheets.googleapis.com/v4/spreadsheets/" + sheetId + "/values/'" + tabName + "'!" + cell + "?key=" + apiKey;
-    //AIzaSyCtTb9pb5NHBxMtPxxADqNW3aJsYzt0eps
 
     fetch(apiUrl)
         .then(response => response.json()) // Assuming the response is always JSON
@@ -42,7 +41,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: calc(100vmin + 12px);
+        font-size: calc(8vw + 8vh + 4vmin);
         font-weight: bold;
         background: linear-gradient(to right, #f32170,
             #ff6b08, #cf23cf, #eedd44);
