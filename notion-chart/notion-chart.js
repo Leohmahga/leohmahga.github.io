@@ -100,40 +100,41 @@ let nuttTooltipColor = '#37352f';
 
 // Dark Mode
 if (nuttChartConfig.theme == 'darkMode') {
-    nuttBackgroundAndGridlineColor = '#191919';
-    nuttBaselineColor = '#555';
+    nuttBackgroundAndGridlineColor = 'transparent';
+    nuttBaselineColor = '#9F9E9C';
     window.addEventListener('load', () => { document.body.style.background = nuttBackgroundAndGridlineColor; });
 }
 
 // Chart default options
 let nuttChartOptions = {
-        'backgroundColor': nuttBackgroundAndGridlineColor,
-        'curveType': 'function',
-        'chartArea': {
-            'top': 30,
-            'right': 20,
-            'bottom': 20,
-            'left': 20
+    'title': "testing",
+    'backgroundColor': nuttBackgroundAndGridlineColor,
+    'curveType': 'function',
+    'chartArea': {
+        'top': 30,
+        'right': 20,
+        'bottom': 20,
+        'left': 20
+    },
+    'hAxis': {
+        'baselineColor': nuttBaselineColor,
+        'gridlines': {
+            'color': nuttBackgroundAndGridlineColor,
         },
-        'hAxis': {
-            'baselineColor': nuttBaselineColor,
-            'gridlines': {
-                'color': nuttBackgroundAndGridlineColor,
-            },
-            'minorGridlines': {
-                'count': 0
-            },
-            'textStyle': {
-                'color': nuttFontColor,
-                'fontSize': nuttFontSize,
-            }
+        'minorGridlines': {
+            'count': 0
         },
-        'height': window.innerHeight - 5,
-        'legend': {
-            'position': 'none',
-            'textStyle': {
-            	'color': nuttFontColor,
-            	'fontSize': nuttFontSize,
+        'textStyle': {
+            'color': nuttFontColor,
+            'fontSize': nuttFontSize,
+        }
+    },
+    'height': window.innerHeight - 5,
+    'legend': {
+        'position': 'none',
+        'textStyle': {
+            'color': nuttFontColor,
+            'fontSize': nuttFontSize,
         }
     },
     'pieHole': 0.5,
