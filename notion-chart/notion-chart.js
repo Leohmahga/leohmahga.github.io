@@ -114,7 +114,7 @@ if (nuttChartConfig.theme == 'darkMode') {
 
 // Chart default options
 let nuttChartOptions = {
-    'interpolateNulls': true
+    'interpolateNulls': true,
     'backgroundColor': {
         'fill': nuttBackgroundAndGridlineColor
     },
