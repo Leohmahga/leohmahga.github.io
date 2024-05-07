@@ -100,15 +100,23 @@ let nuttTooltipColor = '#37352f';
 
 // Dark Mode
 if (nuttChartConfig.theme == 'darkMode') {
+    nuttBackgroundAndGridlineColor = 'F191919';
+    nuttBaselineColor = '#555';
+    window.addEventListener('load', () => { document.body.style.background = nuttBackgroundAndGridlineColor; });
+} else if (nuttChartConfig.theme == 'transMode') {
+    nuttFontColor = '#FFFFFF';
     nuttBackgroundAndGridlineColor = 'transparent';
-    nuttBaselineColor = '#9F9E9C';
+    nuttBaselineColor = '#FFFFFF';
     window.addEventListener('load', () => { document.body.style.background = nuttBackgroundAndGridlineColor; });
 }
 
+
+
 // Chart default options
 let nuttChartOptions = {
-    'title': "testing",
-    'backgroundColor': nuttBackgroundAndGridlineColor,
+    'backgroundColor': {
+        'fill': nuttBackgroundAndGridlineColor
+    },
     'curveType': 'function',
     'chartArea': {
         'top': 30,
@@ -119,7 +127,7 @@ let nuttChartOptions = {
     'hAxis': {
         'baselineColor': nuttBaselineColor,
         'gridlines': {
-            'color': nuttBackgroundAndGridlineColor,
+            'color': 'none'
         },
         'minorGridlines': {
             'count': 0
@@ -151,7 +159,7 @@ let nuttChartOptions = {
     'vAxis': {
         'baselineColor': nuttBaselineColor,
         'gridlines': {
-            'color': nuttBackgroundAndGridlineColor
+            'color': 'none'
         },
         'minorGridlines': {
             'count': 0
@@ -253,6 +261,21 @@ function nuttDrawChart(response) {
 
     // Draw the chart
     nuttChart.draw(nuttChartData, nuttChartOptions);
+
+
+    if (typeof nuttChartConfig.title != "undefined") {
+        const node = document.createElement('div');
+
+        if (nuttChartConfig.theme == 'transMode') {
+            node.className = 'googleChartTitleDark';
+        } else {
+            node.className = 'googleChartTitle'
+        }
+        node.innerHTML = nuttChartConfig.title;
+        nuttChartContainer.childNodes[0].childNodes[0].append(node);
+    }
+
+
 
     // Redraw the chart on resize
     window.addEventListener('resize', () => {

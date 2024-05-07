@@ -1,24 +1,42 @@
-*{
-    padding: 0;
-    margin: 0;
-    color: #FFF;
-}
 body {
-  margin: 0;
-	background: #FFF;
-	line-height: 0;
+    margin: 0;
+    line-height: 0;
 }
 
 #nuttChartContainer {
-  height: 100vh;
-  text-align: center;
+    height: 100vh;
+    text-align: center;
 }
 
 div {
-  margin: 0 auto;
-  background: #FFF;
+    margin: 0 auto;
 }
 
 .google-visualization-table {
-  border-left: 1px solid #eee;
+    border-left: 1px solid #eee;
+}
+
+
+.googleChartTitle {
+    font-size: calc(3vw + 12px);
+    /* Base font-size */
+    font: bold;
+    color: #9F9E9C;
+    text-align: center;
+    width: 100%;
+    padding-top: calc(3vw + 12px);
+    position: relative;
+    z-index: 10;
+}
+
+.googleChartTitleDark {
+    font-size: calc(3vw + 12px);
+    /* Base font-size */
+    font: bold;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+    padding-top: calc(3vw + 12px);
+    position: relative;
+    z-index: 10;
 }
