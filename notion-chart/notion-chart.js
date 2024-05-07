@@ -100,7 +100,7 @@ let nuttTooltipColor = '#37352f';
 
 // Dark Mode
 if (nuttChartConfig.theme == 'darkMode') {
-    nuttBackgroundAndGridlineColor = 'F191919';
+    nuttBackgroundAndGridlineColor = '#191919';
     nuttBaselineColor = '#555';
     window.addEventListener('load', () => { document.body.style.background = nuttBackgroundAndGridlineColor; });
 } else if (nuttChartConfig.theme == 'transMode') {
