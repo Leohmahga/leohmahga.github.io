@@ -193,13 +193,13 @@ for (let i = 0; i < Object.keys(nuttChartCustomOpts).length; i++) {
 if (nuttChartConfig.chartType == 'column' || nuttChartConfig.chartType == 'line' || nuttChartConfig.chartType == 'bar') {
     nuttChartOptions.chartArea.right = 40;
     if (nuttChartOptions.legend.position == 'right') {
-        nuttChartOptions.chartArea.right = 80;
+        nuttChartOptions.chartArea.right = 40;
     } else if (nuttChartOptions.legend.position == 'bottom') {
         nuttChartOptions.chartArea.bottom = 80;
     }
 }
 if (nuttChartConfig.chartType == 'bar') {
-    nuttChartOptions.chartArea.left = 120;
+    nuttChartOptions.chartArea.left = 80;
 } else if (nuttChartConfig.chartType == 'column' || nuttChartConfig.chartType == 'line') {
     nuttChartOptions.chartArea.left = 80;
 } else if (nuttChartConfig.chartType == 'pie' || nuttChartConfig.chartType == 'donut') {
