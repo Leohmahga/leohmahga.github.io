@@ -93,7 +93,7 @@ function nuttQueryChartData() {
 
 // Option variables
 let nuttFontColor = '#9F9E9C';
-let nuttFontSize = 12;
+let nuttFontSize = 8;
 let nuttBaselineColor = '#F2F2F2';
 let nuttBackgroundAndGridlineColor = '#FFFFFF';
 let nuttTooltipColor = '#37352f';
@@ -140,7 +140,7 @@ let nuttChartOptions = {
     },
     'height': window.innerHeight - 5,
     'legend': {
-        'position': 'none',
+        'position': 'in',
         'textStyle': {
             'color': nuttFontColor,
             'fontSize': nuttFontSize,
