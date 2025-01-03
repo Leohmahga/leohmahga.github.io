@@ -191,9 +191,9 @@ for (let i = 0; i < Object.keys(nuttChartCustomOpts).length; i++) {
 
 // Adjust chart areas
 if (nuttChartConfig.chartType == 'column' || nuttChartConfig.chartType == 'line' || nuttChartConfig.chartType == 'bar') {
-    nuttChartOptions.chartArea.right = 40;
+    nuttChartOptions.chartArea.right = 20;
     if (nuttChartOptions.legend.position == 'right') {
-        nuttChartOptions.chartArea.right = 20;
+        nuttChartOptions.chartArea.right = 40;
     } else if (nuttChartOptions.legend.position == 'bottom') {
         nuttChartOptions.chartArea.bottom = 40;
     }
