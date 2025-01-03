@@ -120,9 +120,9 @@ let nuttChartOptions = {
     },
     'curveType': 'function',
     'chartArea': {
-        'top': 20,
+        'top': 10,
         'right': 10,
-        'bottom': 80,
+        'bottom': 10,
         'left': 10
     },
     'hAxis': {
@@ -196,7 +196,7 @@ if (nuttChartConfig.chartType == 'column' || nuttChartConfig.chartType == 'line'
     if (nuttChartOptions.legend.position == 'right') {
         nuttChartOptions.chartArea.right = 20;
     } else if (nuttChartOptions.legend.position == 'bottom') {
-        nuttChartOptions.chartArea.bottom = 80;
+        nuttChartOptions.chartArea.bottom = 40;
     }
 }
 if (nuttChartConfig.chartType == 'bar') {
