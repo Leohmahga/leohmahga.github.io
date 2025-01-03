@@ -121,9 +121,9 @@ let nuttChartOptions = {
     'curveType': 'function',
     'chartArea': {
         'top': 20,
-        'right': 20,
-        'bottom': 20,
-        'left': 20
+        'right': 10,
+        'bottom': 80,
+        'left': 10
     },
     'hAxis': {
         'baselineColor': nuttBaselineColor,
@@ -140,7 +140,7 @@ let nuttChartOptions = {
     },
     'height': window.innerHeight - 5,
     'legend': {
-        'position': 'in',
+        'position': 'bottom',
         'textStyle': {
             'color': nuttFontColor,
             'fontSize': nuttFontSize,
@@ -191,12 +191,12 @@ for (let i = 0; i < Object.keys(nuttChartCustomOpts).length; i++) {
 
 // Adjust chart areas
 if (nuttChartConfig.chartType == 'column' || nuttChartConfig.chartType == 'line' || nuttChartConfig.chartType == 'bar') {
-    nuttChartOptions.chartArea.right = 20;
-    nuttChartOptions.chartArea.left = 20;
+    nuttChartOptions.chartArea.right = 10;
+    nuttChartOptions.chartArea.left = 10;
     if (nuttChartOptions.legend.position == 'right') {
         nuttChartOptions.chartArea.right = 20;
     } else if (nuttChartOptions.legend.position == 'bottom') {
-        nuttChartOptions.chartArea.bottom = 20;
+        nuttChartOptions.chartArea.bottom = 80;
     }
 }
 if (nuttChartConfig.chartType == 'bar') {
