@@ -191,11 +191,11 @@ for (let i = 0; i < Object.keys(nuttChartCustomOpts).length; i++) {
 
 // Adjust chart areas
 if (nuttChartConfig.chartType == 'column' || nuttChartConfig.chartType == 'line' || nuttChartConfig.chartType == 'bar') {
-    nuttChartOptions.chartArea.right = 40;
+    nuttChartOptions.chartArea.right = 0;
     if (nuttChartOptions.legend.position == 'right') {
-        nuttChartOptions.chartArea.right = 40;
+        nuttChartOptions.chartArea.right = 0;
     } else if (nuttChartOptions.legend.position == 'bottom') {
-        nuttChartOptions.chartArea.bottom = 80;
+        nuttChartOptions.chartArea.bottom = 0;
     }
 }
 if (nuttChartConfig.chartType == 'bar') {
