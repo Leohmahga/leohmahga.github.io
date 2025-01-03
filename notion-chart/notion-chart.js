@@ -93,7 +93,7 @@ function nuttQueryChartData() {
 
 // Option variables
 let nuttFontColor = '#9F9E9C';
-let nuttFontSize = 8;
+let nuttFontSize = 10;
 let nuttBaselineColor = '#F2F2F2';
 let nuttBackgroundAndGridlineColor = '#FFFFFF';
 let nuttTooltipColor = '#37352f';
