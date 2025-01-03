@@ -18,25 +18,25 @@ div {
 
 
 .googleChartTitle {
-    font-size: calc(3vw + 12px);
+    font-size: calc(2vw + 12px);
     /* Base font-size */
     font: bold;
     color: #9F9E9C;
     text-align: center;
     width: 100%;
-    padding-top: calc(3vw + 12px);
+    padding-top: calc(2vw + 12px);
     position: relative;
     z-index: 10;
 }
 
 .googleChartTitleDark {
-    font-size: calc(3vw + 12px);
+    font-size: calc(2vw + 12px);
     /* Base font-size */
     font: bold;
     color: #FFFFFF;
     text-align: center;
     width: 100%;
-    padding-top: calc(3vw + 12px);
+    padding-top: calc(2vw + 12px);
     position: relative;
     z-index: 10;
 }
