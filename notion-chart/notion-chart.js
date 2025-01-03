@@ -120,10 +120,10 @@ let nuttChartOptions = {
     },
     'curveType': 'function',
     'chartArea': {
-        'top': 0,
-        'right': 0,
-        'bottom': 0,
-        'left': 0
+        'top': 20,
+        'right': 20,
+        'bottom': 20,
+        'left': 20
     },
     'hAxis': {
         'baselineColor': nuttBaselineColor,
@@ -191,11 +191,12 @@ for (let i = 0; i < Object.keys(nuttChartCustomOpts).length; i++) {
 
 // Adjust chart areas
 if (nuttChartConfig.chartType == 'column' || nuttChartConfig.chartType == 'line' || nuttChartConfig.chartType == 'bar') {
-    nuttChartOptions.chartArea.right = 0;
+    nuttChartOptions.chartArea.right = 20;
+    nuttChartOptions.chartArea.left = 20;
     if (nuttChartOptions.legend.position == 'right') {
-        nuttChartOptions.chartArea.right = 0;
+        nuttChartOptions.chartArea.right = 20;
     } else if (nuttChartOptions.legend.position == 'bottom') {
-        nuttChartOptions.chartArea.bottom = 0;
+        nuttChartOptions.chartArea.bottom = 20;
     }
 }
 if (nuttChartConfig.chartType == 'bar') {
