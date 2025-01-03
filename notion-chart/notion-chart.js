@@ -120,8 +120,8 @@ let nuttChartOptions = {
     },
     'curveType': 'function',
     'chartArea': {
-        'top': 10,
-        'right': 10,
+        'top': 40,
+        'right': 20,
         'bottom': 10,
         'left': 10
     },
@@ -167,7 +167,7 @@ let nuttChartOptions = {
         },
         'textStyle': {
             'color': nuttFontColor,
-            'fontSize': nuttFontSize
+            'fontSize': nuttFontSize,
         }
     }
 }
@@ -191,8 +191,7 @@ for (let i = 0; i < Object.keys(nuttChartCustomOpts).length; i++) {
 
 // Adjust chart areas
 if (nuttChartConfig.chartType == 'column' || nuttChartConfig.chartType == 'line' || nuttChartConfig.chartType == 'bar') {
-    nuttChartOptions.chartArea.right = 10;
-    nuttChartOptions.chartArea.left = 10;
+    nuttChartOptions.chartArea.right = 40;
     if (nuttChartOptions.legend.position == 'right') {
         nuttChartOptions.chartArea.right = 20;
     } else if (nuttChartOptions.legend.position == 'bottom') {
@@ -200,9 +199,9 @@ if (nuttChartConfig.chartType == 'column' || nuttChartConfig.chartType == 'line'
     }
 }
 if (nuttChartConfig.chartType == 'bar') {
-    nuttChartOptions.chartArea.left = 80;
+    nuttChartOptions.chartArea.left = 40;
 } else if (nuttChartConfig.chartType == 'column' || nuttChartConfig.chartType == 'line') {
-    nuttChartOptions.chartArea.left = 80;
+    nuttChartOptions.chartArea.left = 40;
 } else if (nuttChartConfig.chartType == 'pie' || nuttChartConfig.chartType == 'donut') {
     nuttChartOptions.chartArea.right = 0;
     if (nuttChartOptions.legend.position == 'bottom') {
@@ -283,6 +282,8 @@ function nuttDrawChart(response) {
     window.addEventListener('resize', () => {
         nuttChartOptions.height = window.innerHeight;
         nuttChart.draw(nuttChartData, nuttChartOptions);
+
+        console.log('chartArea left:', nuttChartOptions.chartArea.left);
     });
 
 }
