@@ -5,7 +5,8 @@ body {
 
 #nuttChartContainer {
     height: 100vh;
-    text-align: center;
+    display: flex; /* Turn into a flex container */
+    justify-content: flex-start; /* Align chart to the left */
 }
 
 div {
