@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Code Widget</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-transparent text-white min-h-screen flex items-center justify-center">
+    <div class="bg-transparent p-4 rounded-2xl w-full max-w-md space-y-4">
+        <!-- Year Progress Bar -->
+        <div class="flex justify-between items-center space-x-4">
+            <!-- Left Side: Stacked Label + Countdown -->
+            <div class="flex flex-col flex-shrink-0">
+                <span class="font-medium text-sm leading-tight">Year</span>
+                <div class="text-xs text-gray-400 leading-tight">
+                    <span id="year-countdown" class="font-mono"></span> to go
+                </div>
+            </div>
+            <!-- Right Side: Bar + Percentage -->
+            <div class="flex items-center space-x-2 flex-grow">
+                <div class="w-full bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                    <div id="year-bar" class="bg-gradient-to-r from-red-500 to-orange-500 h-2.5 rounded-full transition-all duration-500 ease-out"></div>
+                </div>
+                <span id="year-percentage" class="font-mono text-xs w-10 text-right">0%</span>
+            </div>
+        </div>
+
+        <!-- Quarter Progress Bar -->
+        <div class="flex justify-between items-center space-x-4">
+            <!-- Left Side: Stacked Label + Countdown -->
+            <div class="flex flex-col flex-shrink-0">
+                <span class="font-medium text-sm leading-tight">Quarter</span>
+                <div class="text-xs text-gray-400 leading-tight">
+                    <span id="quarter-countdown" class="font-mono"></span> to go
+                </div>
+            </div>
+            <!-- Right Side: Bar + Percentage -->
+            <div class="flex items-center space-x-2 flex-grow">
+                <div class="w-full bg-gray-700 rounded-full h-2.5 overflow-hidden">
+                    <div id="quarter-bar" class="bg-gradient-to-r from-purple-500 to-indigo-500 h-2.5 rounded-full transition-all duration-500 ease-out"></div>
+                </div>
+                <span id="quarter-percentage" class="font-mono text-xs w-10 text-right">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateProgressBars() {
+            const now = new Date();
+            const year = now.getFullYear();
+            
+            // --- Year Calculation ---
+            const startOfYear = new Date(year, 0, 1); // Jan 1st
+            const endOfYear = new Date(year + 1, 0, 1); // Jan 1st of next year
+            const totalYearMillis = endOfYear - startOfYear;
+            const elapsedYearMillis = now - startOfYear;
+            const yearProgress = (elapsedYearMillis / totalYearMillis) * 100;
+            
+            // --- Year Countdown Calculation ---
+            const yearMillisLeft = endOfYear - now;
+            const yearDays = Math.floor(yearMillisLeft / (1000 * 60 * 60 * 24));
+            const yearHours = Math.floor((yearMillisLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const yearMinutes = Math.floor((yearMillisLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const yearCountdownFormatted = `${yearDays}d ${yearHours}h ${yearMinutes}m`;
+
+
+            // --- Quarter Calculation ---
+            const quarter = Math.floor(now.getMonth() / 3);
+            const startOfQuarter = new Date(year, quarter * 3, 1);
+            const endOfQuarter = new Date(year, quarter * 3 + 3, 0); // Last day of the quarter's last month
+            endOfQuarter.setHours(23, 59, 59, 999); // Set to the very end of the day
+
+            const totalQuarterMillis = endOfQuarter - startOfQuarter;
+            const elapsedQuarterMillis = now - startOfQuarter;
+            const quarterProgress = (elapsedQuarterMillis / totalQuarterMillis) * 100;
+            
+            // --- Quarter Countdown Calculation ---
+            const quarterMillisLeft = endOfQuarter - now;
+            const quarterDays = Math.floor(quarterMillisLeft / (1000 * 60 * 60 * 24));
+            const quarterHours = Math.floor((quarterMillisLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const quarterMinutes = Math.floor((quarterMillisLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const quarterCountdownFormatted = `${quarterDays}d ${quarterHours}h ${quarterMinutes}m`;
+
+
+            // --- Update UI ---
+            const yearBar = document.getElementById('year-bar');
+            const yearPercentage = document.getElementById('year-percentage');
+            const yearCountdown = document.getElementById('year-countdown');
+
+            const quarterBar = document.getElementById('quarter-bar');
+            const quarterPercentage = document.getElementById('quarter-percentage');
+            const quarterCountdown = document.getElementById('quarter-countdown');
+
+            yearBar.style.width = `${yearProgress}%`;
+            yearPercentage.textContent = `${yearProgress.toFixed(0)}%`;
+            yearCountdown.textContent = yearCountdownFormatted;
+
+            quarterBar.style.width = `${quarterProgress}%`;
+            quarterPercentage.textContent = `${quarterProgress.toFixed(0)}%`;
+            quarterCountdown.textContent = quarterCountdownFormatted;
+        }
+
+        // Update the bars every second
+        setInterval(updateProgressBars, 1000);
+
+        // Initial call to display immediately on load
+        updateProgressBars();
+    </script>
+</body>
+</html>
+
