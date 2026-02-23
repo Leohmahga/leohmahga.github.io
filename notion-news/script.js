@@ -11,7 +11,7 @@ fetch(RSS_URL)
     .then(data => {
         const items = data.querySelectorAll("item");
         let html = `
-        <main class="FeedsWidget_feedsWidget__2E6dM default light">
+        <main class="FeedsWidget_feedsWidget__2E6dM default dark">
             <ul>
                 <li class="Feed_feed__2AZsj">
                     <h2>US Top News and Analysis</h2>
