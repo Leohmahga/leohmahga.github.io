@@ -261,7 +261,6 @@ a {
     box-sizing: border-box
 }
 
-
 .RefreshButton_container__SycaW {
     text-align: right
 }
@@ -352,7 +351,7 @@ a {
 }
 
 .FeedsWidget_feedsWidget__2E6dM {
-/*    background: #191919;*/
+    background: #191919;
     color: #fff;
     padding: 10px
 }
@@ -365,6 +364,7 @@ a {
 }
 
 html,
-body {
-    background-color: transparent !important
+body,
+#__next {
+    background-color: #191919 !important;
 }
